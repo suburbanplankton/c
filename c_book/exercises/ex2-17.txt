@@ -1,0 +1,45 @@
+char c;
+int i;
+unsigned u;
+float f;
+
+(int = (unsigned + int));
+(int = (unsigned)); /* usual arithmetic conversions */
+(int); /* assignment */
+
+a   c = u * f + 2.6L;
+    (c = ((u * f) + 2.6L))
+    (int = ((float) + long double))
+    (int = (long double))
+    (int)
+b   u += --f / u % 3;
+    (u (+= (((--f) / u) % 3)))
+    (unsigned (+= (float / unsigned) % int))
+    (unsigned (+= (float) % int))
+    (unsigned (+= (float))
+    (unsigned)
+c   i <<= u * - ++f;
+    (i (<<= (u * (- (++f)))))
+    (int (<<= (unsigned * (- float))))
+    (int (<<= (unsigned * float)))
+    (int (<<= (float))
+    (int)
+d   u = i + 3 + 4 + 3.1;
+    (u = (((i + 3) + 4) + 3.1))
+    (unsigned = (((int + int) + int) + double)))
+    (unsigned = ((int + int) + double))
+    (unsigned = (int + double))
+    (unsigned = (double))
+e   u = 3.1 + i + 3 + 4;
+    (u = (((3.1 + i) + 3) + 4))
+    (unsigned = (((double + int) + int) + int)))
+    (unsigned = ((double + int) + int))
+    (unsigned = (double + int))
+    (unsigned = (double))
+f   c = (i << - --f) & 0xf;
+    (c = ((i << (- (--f))) & 0xf))
+    (char = (int << (- (--float)) & int))
+    (char = (int << (- float) & int))
+    (char = (float & int))
+    (char = (float))
+    (char)
